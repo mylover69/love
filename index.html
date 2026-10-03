@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Monthsary ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+  color: #6b2945;
+  text-align: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  margin: 20px;
+  padding: 30px 20px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #e64b7a;
+  font-size: 42px;
+}
+
+h2 {
+  color: #d94b78;
+}
+
+.heart {
+  font-size: 60px;
+  animation: heart 1s infinite;
+}
+
+@keyframes heart {
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.photos img {
+  width: 28%;
+  min-width: 100px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+button {
+  background: #e64b7a;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-size: 17px;
+}
+
+#surprise {
+  display: none;
+  margin-top: 25px;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.days {
+  font-size: 40px;
+  color: #e64b7a;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HOME -->
+<div class="card">
+  <div class="heart">❤️</div>
+
+  <h1>Happy Monthsary</h1>
+
+  <p>To My Special Person (P)💕</p>
+
+  <p>
+    Our Story • Our Memories • Our Love
+  </p>
+</div>
+
+
+<!-- PHOTOS -->
+<div class="card">
+
+  <h2>📸 Our Memories</h2>
+
+  <div class="photos">
+
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+
+  </div>
+
+</div>
+
+
+<!-- LOVE LETTER -->
+<div class="card">
+
+  <h2>💌 My Letter To You</h2>
+
+  <p style="line-height:2; font-size:18px;">
+
+    Happy Monthsary ပါ သဲ❤️
+    အတူတူရှိခဲ့တဲ့ တစ်လျှောက်လုံးမှာ
+    ကို ဆိုးခဲ့တာတွေကို သဲ❤️ က
+    သည်းခံ၊ ခွင့်လွှတ်၊ နားလည်ပေးခဲ့တဲ့ သဲ❤️
+    ကိုကျေးဇူးတင်ပါတယ်
+    သဲ❤️ အတွက် ကိုက ပြီးပြည့်စုံတဲ့လူ
+    မဟုတ်ပေမဲ့ သဲကိုတော့ ပြီးပြည့်စုံအောင်
+    ကို ထားချင်တယ် အဲ့အတွက်ကို ကြိုးစားမယ်
+    တစ်လပြည့်ကနေစပြီး သဲ❤️အတွက် 
+    ကောင်းသော လဒ်လာဘ တွေရရှိပါစေ
+    
+    
+
+    <br><br>
+
+    ကို့ ကိုချစ်ပေးတဲ့အတွက်ကျေးဇူးတင်ပါတယ်။
+
+    <br><br>
+
+    Happy Monthsary,အချစ်ရဆုံးသူလေး ❤️
+
+  </p>
+
+</div>
+
+
+<!-- DAYS COUNTER -->
+<div class="card">
+
+  <h2>🗓️ Our Time Together</h2>
+
+  <div class="days" id="days">
+    0 Days
+  </div>
+
+  <p>and counting... ❤️</p>
+
+</div>
+
+
+<!-- SURPRISE -->
+<div class="card">
+
+  <h2>🎁 I Have Something For You</h2>
+
+  <button onclick="showSurprise()">
+    Open Your Surprise 💝
+  </button>
+
+  <div id="surprise">
+
+    ❤️ ကို့ ရဲ့ကမ္ဘာလေး ❤️
+
+    <br><br>
+
+    "Monthsary" ကနေ "Anniversary"
+    "Anniversary" ကနေ "Married" ထိ
+    ဘယ်လိုအခတ်အခဲပဲ ရှိနေ လက်တွဲမဖြုတ်ပဲ
+    အတူတူ တိုင်တိုင်ပင်ပင်နဲ့ ရှေ့ဆက်ကြမယ်.
+
+    <br><br>
+
+    အမြဲတမ်းမပြောဖြစ်ပေမဲ့ 
+    ရင်ထဲမှာတော့အမြဲတမ်းရှိပါတယ်
+    အရမ်းချစ်တယ်နော် သဲ❤️
+    I love you so much 
+
+  </div>
+
+</div>
+
+
+<script>
+
+// Anniversary စတင်တဲ့နေ့
+const anniversary = new Date("2026-09-06");
+
+const today = new Date();
+
+const difference = today - anniversary;
+
+const days = Math.floor(
+  difference / (1000 * 60 * 60 * 24)
+);
+
+document.getElementById("days").innerHTML =
+  days + " Days ❤️";
+
+
+// Surprise Button
+function showSurprise() {
+
+  document.getElementById("surprise").style.display =
+    "block";
+
+}
+
+</script>
+
+</body>
+</html>
